@@ -2,10 +2,11 @@
   "name": "todochallenge",
   "version": "1.0.0",
   "description": "Challenge CRUD API with pure Node.js",
+  "main": "src/server.js",
   "type": "module",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch src/server.js"
   },
   "keywords": [],
   "author": "",
