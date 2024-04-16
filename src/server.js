@@ -8,18 +8,15 @@ const server = http.createServer((request, response) => {
 
   const {method, url} = request
   // para o mapeamento de rotas
-  const route = routes.find((routeObject) => {
-    routeObject.path === url &&
-    routeObject.method === method
-  })
-
+  const route = routes.find(route => {
+    return route.method === method && route.path === url
+  });
+  console.log(route.handler);
   if (route) {
-    route.handler(request, response)
-  } else {
-    return response.writeHead(404).end('Erro na Aplicação')
+    return route.handler(request, response)
   }
 
-  return response.end('Hello Server')
+  return response.writeHead(404).end('Hello Server Teve um erro')
 })
 
 server.listen(PORT, () => {

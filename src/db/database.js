@@ -7,7 +7,7 @@ const databasePath = new URL('/db.json', import.meta.url)
 export class Database {
   #database = {}
 
-  // leitura e persistencia de dados
+  // leitura e persistência de dados
   constructor() {
     fs.readFile(databasePath, 'utf-8').then(data => {
       this.#database = JSON.parse(data)
