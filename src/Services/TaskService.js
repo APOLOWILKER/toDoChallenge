@@ -8,6 +8,7 @@ export class TaskService {
 
   async listTasks() {
     try {
+      console.log('Services');
       const tasks = await this.db.select('tasks');
 
       if(!tasks || tasks.length === 0) {

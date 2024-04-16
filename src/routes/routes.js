@@ -1,17 +1,16 @@
 import { TaskController } from "../controllers/TaskController.js";
 
+const taskController = new TaskController();
 
 export const routes = [
   {
     method: 'GET',
     path: '/tasks',
-    handler: () => {
-      console.log('é uma fraude')
-    }
+    handler: taskController.listTasks
   },
   {
     method: 'POST',
     path: '/tasks',
-    handler: TaskController.createTask
+    handler: taskController.createTask
   }
 ]

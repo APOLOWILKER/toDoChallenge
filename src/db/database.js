@@ -2,14 +2,15 @@ import fs from 'node:fs/promises'
 
 
 // rota para o arquivo do DB
-const databasePath = new URL('/db.json', import.meta.url)
+const databasePath = new URL('./db.json', import.meta.url)
 
 export class Database {
   #database = {}
 
   // leitura e persistência de dados
   constructor() {
-    fs.readFile(databasePath, 'utf-8').then(data => {
+    fs.readFile(databasePath, 'utf-8')
+    .then(data => {
       this.#database = JSON.parse(data)
     })
     .catch(() => {
@@ -18,7 +19,7 @@ export class Database {
   }
 
   #persist() {
-    fs.writeFile(databasePath, JSON.stringify(this.#database))
+    fs.writeFile(databasePath, JSON.stringify(this.#database, null, 2))
   }
 
   select(table) {

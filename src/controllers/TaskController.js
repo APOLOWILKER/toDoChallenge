@@ -4,15 +4,15 @@ import { TaskService } from "../Services/TaskService.js";
 
 export class TaskController {
   constructor() {
-    this.TaskService = new TaskService();
+    this.taskService = new TaskService();
   }
 
 
   async listTasks(request, response) {
     try{
-      const tasks = await this.TaskService.listTasks();
+      const tasks = await this.taskService.listTasks();
 
-      response.status(200).json(tasks);
+      return response.status(200).json(tasks);
     } catch (error) {
       console.error('Error listing tasks:', error);
       response.status(500).json({ error: 'Failed to list tasks' });
@@ -23,7 +23,7 @@ export class TaskController {
     const {title, description } = request.body;
 
     try{
-      const task = await this.TaskService.createTask(title, description)
+      const task = await this.taskService.createTask(title, description)
 
       response.status(201).json(task);
 
