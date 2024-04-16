@@ -1,14 +1,15 @@
 # ToDo List usando apenas o NODE.JS sem framework
 
-clone o projeto:
-git clone ...
+### clone o projeto:
+`git clone ...
+`
+### Instale as dependencias:
 
-Instale as dependencias:
-npm i
+`npm i`
 
-para rodar o projeto localmente use: 
-npm run dev
+### para rodar o projeto localmente use: 
+`npm run dev`
 
-na porta:
-http://localhost:3333/tasks
+### Na porta:
+- http://localhost:3333/tasks
 Pode listar todas as tarefas.
